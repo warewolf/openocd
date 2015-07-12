@@ -2741,7 +2741,8 @@ static int gdb_input_inner(struct connection *connection)
 						 * sent by GDB first to OpenOCD, thus defeating the check to
 						 * make only the single stepping have the sync feature...
 						 */
-						nostep = true;
+						// RGH: FIXME: IDA Pro using OpenOCD's GDB backend flips a shit with this enabled
+						// nostep = true;
 						LOG_WARNING("stepi ignored. GDB will now fetch the register state " \
 								"from the target.");
 					}
